@@ -18,36 +18,39 @@
    <p id="texto">hola soy Mila</p>
    <button onclick="cambiarTexto()">Cambiar</button>
 </div>
-<br>
-<br>
-
 <script>
    function cambiarTexto() {
        document.getElementById("texto").innerHTML = "hola soy <strong>Beto, el dueño de </strong> Mila";
    }
 </script>
-<br>
-<br>
 <div>
- <button onclick="MensajeOculto()">Mensaje Oculto</button>
-
 </div>
-<br>
-<br>
+<div>
+  <p id="MOculto"> este es un mensaje oculto</p>
+  <button onclick="cambiarTexto2()">Mensaje Oculto</button>
+</div>
+
+<script>
+  function cambiarTexto2() {
+      document.getElementById("MOculto").innerHTML = "<h2>Hola Mundo</h2>";
+  }
+</script>
+
   <h3> <center> tiene 5 meses de nacida, es muy juguetona y muy leal</center> </h3>
 <center> <img src="https://i.imgur.com/UZ7ZRmP.jpg" width="150" height="200" alt=""></center> 
-<div id="miDiv">
- <button onclick="Estonoloescribiyo()">Ver</button>
- <script>
-   function Estonoloescribiyo(){
- document.getElementById("texto").innerHTML="Hola, esto no lo escribio Alberto Aguirre, lo escribio JavaScript";
-}
- </script>
+
+<div>
+  <p id="Ver"> click para ver</p>
+  <button onclick="cambiarTexto3()">Ver</button>
+</div>
 
 
- </div>
- <br>
-<br>
+<script>
+  function cambiarTexto3() {
+      document.getElementById("Ver").innerHTML = "Este mensaje no lo escribió Alberto Aguirre, fue JavaScript";
+  }
+</script>
+
 <center> <img src="https://i.imgur.com/ydzPqgf.jpg" width="150" height="200" alt=""></center>
 <center>   <p> le gusta jugar con su pelota, ya sabe dar la pata y dar vueltas :D</p> </center>
 <center>   <p> esta muy pequeña, espermos que crezca mucho y sea muy fuerte</p> </center>
@@ -57,8 +60,6 @@
  <button onclick="cambiarAtributo()">Cambiar imagen</button>
  <button onclick="cambiarAtributo2()">Restaurar imagen</button>
 </div>
-<br>
-<br>
 <div>
  <table id="tabla">
      <tr>
@@ -92,7 +93,7 @@
 
 <script>
  function MensajeOculto() {
-   document.getElementById("texto").innerHTML = "<h2>Hola Mundo</h2>";
+   document.getElementById("texto2").innerHTML = "<p><h2>Hola Mundo</h2></p>";
  }
 </script>
 </center>
