@@ -13,15 +13,78 @@
    <h1><center>MILA</center></h1>
    
    <h2> <center>Mila es una perrita Pitbull Blue</center> </h2>
+   <div>
+    <p id="texto">hola soy Mila</p>
+    <button onclick="cambiarTexto()">Cambiar</button>
+</div>
 
+<script>
+    function cambiarTexto() {
+        document.getElementById("texto").innerHTML = "hola soy <strong>Beto, el dueño de </strong> Mila";
+    }
+</script>
+<br>
+<div>
+  <button onclick="MensajeOculto()">Mensaje Oculto</button>
+
+</div>
    <h3> <center> tiene 5 meses de nacida, es muy juguetona y muy leal</center> </h3>
  <center> <img src="https://i.imgur.com/UZ7ZRmP.jpg" width="150" height="200" alt=""></center> 
+ <div id="miDiv">
+  <button onclick="Estonoloescribiyo()">Ver</button>
+  <script>
+    function Estonoloescribiyo(){
+  document.getElementById("texto").innerHTML="Hola, esto no lo escribio Alberto Aguirre, lo escribio JavaScript";
+}
+  </script>
 
+
+  </div>
  <center> <img src="https://i.imgur.com/ydzPqgf.jpg" width="150" height="200" alt=""></center>
 <center>   <p> le gusta jugar con su pelota, ya sabe dar la pata y dar vueltas :D</p> </center>
 <center>   <p> esta muy pequeña, espermos que crezca mucho y sea muy fuerte</p> </center>
 <center>   <p> su primer diente se le cayo hace poco, es muy tierna :3</p> </center>
+<div>
+  <img id="imagen" src="https://i.imgur.com/UZ7ZRmP.jpg" alt="Mila" width="150px">
+  <button onclick="cambiarAtributo()">Cambiar imagen</button>
+  <button onclick="cambiarAtributo2()">Restaurar imagen</button>
+</div>
+<div>
+  <table id="tabla">
+      <tr>
+          <th>
+              Mila
+          </th>
+          <th>
+              Edad
+          </th>
+      </tr>
+  </table>
+  <button onclick="agregarElemento()">Agregar</button>
+</div>
+<script>
+  function cambiarAtributo() {
+      document.getElementById("imagen").src = "https://imgur.com/vRc9XKe" ;
+  }
+</script>
+<script>
+  function cambiarAtributo2() {
+      document.getElementById("imagen").src = "https://i.imgur.com/UZ7ZRmP.jpg" ;
+  }
+</script>
 
+<script>
+  function agregarElemento() {
+      var numero = Math.floor(Math.random() * (4 - 1) + 1);
+      document.getElementById("tabla").innerHTML += "<tr><td>Mila tiene</td><td>"+numero+"</td></tr>";
+  }
+</script>
+
+<script>
+  function MensajeOculto() {
+    document.getElementById("texto").innerHTML = "<h2>Hola Mundo</h2>";
+  }
+</script>
 
 </body>
 
