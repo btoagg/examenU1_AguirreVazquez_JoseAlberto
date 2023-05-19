@@ -14,12 +14,41 @@
     <h1>Cars 3</h1>
     <h3>La pelicula <strong>"Cars 3"</strong> se lanzó en el año: <strong>2017</strong></h3>
     <p>La pelicula la produjo "Disney Pixar" y el director fue "Brien Fee"</p>
-    <h2>Imagen</h2>
-   <center><img src="imagenes/cars1.1.jpg" alt="portada cars 3"></center> 
-    <div>
+    <h2>Imagenes</h2>
+   <div class="image-container">
+    <img id="image" src="" alt="Imagen">
+  </div>
+  <div class="button-container">
+    <button class="button" id="previousButton">Anterior</button>
+    <button class="button" id="nextButton">Siguiente</button>
+  </div>
 
+  <script>
+    var imageUrls = ["imagenes/cars1.1.jpg","imagenes/cars1.2.jpg","imagenes/cars1.3.png","imagenes/cars1.4.jpg","imagenes/cars1.5.jpg"];
+    var currentIndex = 0;
+    var imageElement = document.getElementById("image");
+    var previousButton = document.getElementById("previousButton");
+    var nextButton = document.getElementById("nextButton");
 
-    </div>
+    function updateImage() {
+      var imageUrl = imageUrls[currentIndex];
+      imageElement.src = imageUrl;  }
+    function showPreviousImage() {
+      currentIndex--;
+      if (currentIndex < 0) {
+        currentIndex = imageUrls.length - 1;
+      }
+      updateImage(); }
+    function showNextImage() {
+      currentIndex++;
+      if (currentIndex >= imageUrls.length) {
+        currentIndex = 0; }
+      updateImage();  }
+    previousButton.addEventListener("click", showPreviousImage);
+    nextButton.addEventListener("click", showNextImage);
+
+    updateImage();
+    </script>
     <h3>RESEÑA</h3>
     <p>‘Cars 3’, aceptable pero intrascendente
         Escena Cars 3
