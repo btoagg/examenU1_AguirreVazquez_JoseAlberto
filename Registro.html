@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registro</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1 id="nombre"> </h1>
+    <h2 id="apellidos"></h2>
+    <a id="mail" href="mailto:"mail></a>
+    <p id="date">
+    <a id="phone" href="tel:"phone></a>
+
+    <script>
+        getParameter =(key) => {
+            address = window.location.search;
+
+            parameterList= new URLSearchParams(address);
+
+            return parameterList.get(key);
+        }
+        var nombre = getParameter("nombre");
+        var apellidos = getParameter("apellidos");
+        var mail = getParameter("mail");
+        var date = getParameter("date");
+        var phone = getParameter("phone");
+        var user = getParameter("user");
+        var pass = getParameter("pass");
+        var passconfirm = getParameter("passconfirm");
+
+
+
+        if(nombre!=null){
+            document.getElementById("nombre").innerHTML = "Tu nombre es: " + nombre;
+        }
+        document.getElementById("apellidos").innerHTML = "Tus apellidos son : "+ apellidos;
+        document.getElementById("mail").innerHTML =mail;
+        document.getElementById("date").innerHTML =date;
+        document.getElementById("phone").innerHTML =phone;
+        document.getElementById("user").innerHTML =user;
+
+    </script>
+</body>
+</html>
