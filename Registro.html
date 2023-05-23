@@ -11,9 +11,11 @@
 <body>
     <h1 id="nombre"> </h1>
     <h2 id="apellidos"></h2>
-    <a id="mail" href="mailto:"mail></a>
-    <p id="date">
-    <a id="phone" href="tel:"phone></a>
+    <h3 id="user"></h3>
+    <a id="email" href="mailto: mail"></a>
+    <p id="birth"></p>
+    <a id="numberphone" href="tel: phone"></a>
+    <p id="passconfirm2"></p>
 
     <script>
         getParameter =(key) => {
@@ -26,22 +28,52 @@
         var nombre = getParameter("nombre");
         var apellidos = getParameter("apellidos");
         var mail = getParameter("mail");
+        var email = getParameter("email");
+
         var date = getParameter("date");
+        var birth = getParameter("birth");
+        var numberphone = getParameter("numberphone");
+
         var phone = getParameter("phone");
         var user = getParameter("user");
         var pass = getParameter("pass");
         var passconfirm = getParameter("passconfirm");
+        var passconfirm2 = getParameter("passconfirm2");
+
+
+        console.log(date);
+        var arreglo = date.split("-");
+        date = arreglo[0];
+        console.log(2023-date);
+
 
 
 
         if(nombre!=null){
             document.getElementById("nombre").innerHTML = "Tu nombre es: " + nombre;
         }
+        if(pass==passconfirm){
+            if(pass.length>5){
+                 document.getElementById("passconfirm2").innerHTML = "Tu contraseña es segura";
+
+            }else{
+                document.getElementById("passconfirm2").innerHTML = "Tu contraseña es muy insegura";
+
+            }
+           
+        }else if (pass!=passconfirm){
+            document.getElementById("passconfirm2").innerHTML = "Tu contraseña no coincide";
+
+        }
+        
+        
+
+        
         document.getElementById("apellidos").innerHTML = "Tus apellidos son : "+ apellidos;
-        document.getElementById("mail").innerHTML =mail;
-        document.getElementById("date").innerHTML =date;
-        document.getElementById("phone").innerHTML =phone;
-        document.getElementById("user").innerHTML =user;
+        document.getElementById("email").innerHTML ="Enviar correo a: "+ (mail);
+        document.getElementById("birth").innerHTML ="Tienes "+ (2023-date) + " años";
+        document.getElementById("numberphone").innerHTML ="Llamar a " + (phone);
+        document.getElementById("user").innerHTML ="Tu nombre de usuario es: " + user;
 
     </script>
 </body>
